@@ -1,0 +1,43 @@
+<div class="content-area">
+    <div class="container">
+        <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
+            <h5>Resultado da Busca</h5>
+            <h2><span>54716</span> Passeios disponíveis</h2>
+        </div>
+        <div class="row jobs">
+            <div class="col-md-2">
+                <div class="wow">
+                  <h2>Categorias</h2>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Amazon</a>
+                    </li>
+                    <li>
+                      <a href="#">River</a>
+                    </li>
+                    <li>
+                      <a href="#">Day</a>
+                    </li>
+                    <li>
+                      <a href="#">Night</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <% @tours.each do |tour| %>
+                      <div>
+                        <h1><%= link_to tour.title, tour %></h1>
+                        <%= image_tag tour.picture.url(:thumb) %>
+                        <dl>
+                          <dt>Local</dt>
+                          <dd><%= tour.location.local%></dd>
+                          <dt>Categoria</dt>
+                          <dd><%= tour.category.name %></dd>
+                        </dl>
+                      </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

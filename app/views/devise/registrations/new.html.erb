@@ -8,7 +8,7 @@
     <%= f.input :location, label: 'Localidade' %>
     <%= f.input :phone, label: 'Telefone' %>
     <%= f.input :email, required: true %>
-    <%= f.input :password, label: 'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password, label: 'Senha', required: true, hint: ("Mínimo #{@minimum_password_length} caracteres" if @minimum_password_length) %>
     <%= f.input :password_confirmation, label: 'Confirme senha', required: true %>
   </div>
 

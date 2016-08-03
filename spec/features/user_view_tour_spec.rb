@@ -6,7 +6,7 @@ feature 'User view tour' do
     tour = create :tour, guide: guide
 
     visit root_path
-
+    click_on 'Experiências'
     click_on tour.title
 
     expect(page).to have_content tour.title
@@ -17,11 +17,5 @@ feature 'User view tour' do
     expect(page).to have_content tour.duration
     expect(page).to have_content number_to_currency(tour.amount)
     expect(page).to have_content tour.description
-  end
-
-  scenario 'without tour' do
-    visit root_path
-
-    expect(page).to have_content 'Nenhum passeio cadastrado.'
   end
 end

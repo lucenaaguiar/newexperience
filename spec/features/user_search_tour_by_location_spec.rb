@@ -13,8 +13,11 @@ feature 'User search tour by location' do
 
     visit root_path
 
-    select category.name, from: 'Tipo de passeio'
     fill_in 'Local', with: location.city
+    within '#lbl-search' do
+      select category.name, from: 'Tipo de passeio'
+    end
+
     click_on 'Buscar'
 
     expect(page).to have_content tour.title
