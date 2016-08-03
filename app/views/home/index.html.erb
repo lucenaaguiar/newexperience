@@ -1,13 +1,43 @@
-<%= link_to 'Entrar', new_guide_session_path %>
-<section>
-  <div>
-    <%= form_tag search_tours_path, method: 'get' do %>
-      <%= label_tag :categories, 'Tipo de passeio:' %>
-      <%= select_tag :categories, options_from_collection_for_select(@categories, :id, :name), prompt: 'Categoria'  %>
-      <%= submit_tag 'Buscar' %>
-    <% end %>
-  </div>
+<!-- Body content -->
 
+
+
+<div class="slider-area">
+    <div class="slider">
+        <div id="bg-slider" class="owl-carousel owl-theme">
+
+          <div class="item"><%= image_tag "slider-image-3.jpg", alt: "Green River" %></div>
+          <div class="item"><%= image_tag "slider-image-2.jpg", alt: "Green River2" %>></div>
+
+        </div>
+    </div>
+    <div class="container slider-content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+                <h2>Tour Searching Just Got So Easy</h2>
+                <p>Experience the world with help of local people. Have the chance to visit places that only local people know. Hear the historys from people who lived it.</p>
+                <div class="search-form wow pulse" data-wow-delay="0.8s">
+                    <%= form_tag search_tours_path, method: 'get', class: "form-inline" do %>
+                      <div class="form-group", id="lbl-search" >
+                        <%= label_tag :categories, 'Tipo de passeio:' %>
+                        <%= select_tag :categories, options_from_collection_for_select(@categories, :id, :name), prompt: 'Categoria', class: "form-control" %>
+                      </div>
+                      <%= submit_tag 'Buscar' %>
+                    <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/main.js"></script>
+-->
+<section>
   <div>
     <% @tours.each do |tour| %>
       <div>

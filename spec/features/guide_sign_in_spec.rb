@@ -5,8 +5,9 @@ feature 'Guide sign in' do
     guide = create :guide
 
     visit root_path
-
-    click_on 'Entrar'
+    within '#btn-login' do
+      click_on 'Entrar'
+    end
 
     fill_in 'Email', with: guide.email
     fill_in 'Senha', with: guide.password

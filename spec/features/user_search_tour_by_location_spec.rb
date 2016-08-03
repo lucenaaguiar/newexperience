@@ -9,8 +9,9 @@ feature 'User search tour by location' do
     tour1 = create(:tour, guide: guide, category: category1)
 
     visit root_path
-
-    select category.name, from: 'Tipo de passeio:'
+    within '#lbl-search' do
+      select category.name, from: 'Tipo de passeio:'
+    end
     click_on 'Buscar'
 
     expect(page).to have_content tour.title

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%= image_tag 'logo.png', alt: "Experience the world"%></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="button navbar-right">
+          <button class="navbar-btn nav-button wow bounceInRight login" id="btn-login" data-wow-delay="0.8s"><%= link_to 'Entrar', new_guide_session_path %></button>
+      </div>
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li class="wow fadeInDown" data-wow-delay="0s"><%= link_to 'Início', root_path, :class =>   "active" %></button></li>
+        <li class="wow fadeInDown" data-wow-delay="0.1s" id="top-exp"><%=link_to 'Experiências', tours_path%> </a></li>
+        <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Guias</a></li>
+        <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Sobre</a></li>
+        <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="#">Contato</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
