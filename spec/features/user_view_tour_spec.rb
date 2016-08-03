@@ -6,7 +6,9 @@ feature 'User view tour' do
     tour = create :tour, guide: guide
 
     visit root_path
-
+    within '#top-exp' do
+      click_on 'Experiências'
+    end
     click_on tour.title
 
     expect(page).to have_content tour.title
