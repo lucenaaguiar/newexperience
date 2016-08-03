@@ -25,14 +25,10 @@
                 </div>
             </div>
             <div class="col-md-10">
-              <div class="container">
                 <% @tours.each do |tour| %>
-                  <div class="col-md-2">
-                    
-                  </div>
-                  <div class="col-md-10">
                       <div>
                         <h1><%= link_to tour.title, tour %></h1>
+                        <%= image_tag tour.picture.url(:thumb) %>
                         <dl>
                           <dt>Local</dt>
                           <dd><%= tour.location.local%></dd>
@@ -41,10 +37,7 @@
                         </dl>
                       </div>
                       <hr>
-
-                  </div>
                 <% end %>
-              </div>
             </div>
         </div>
     </div>
