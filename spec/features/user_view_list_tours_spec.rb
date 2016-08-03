@@ -7,9 +7,7 @@ feature 'User view tours' do
     tours = create_list(:tour, 10, guide: guide, category: category)
 
     visit root_path
-    within '#top-exp' do
-      click_on 'Experiências'
-    end
+    click_on 'Experiências'
 
     tours.each do |tour|
       expect(page).to have_link tour.title
