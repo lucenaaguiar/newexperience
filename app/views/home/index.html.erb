@@ -1,7 +1,4 @@
 <!-- Body content -->
-
-
-
 <div class="slider-area">
     <div class="slider">
         <div id="bg-slider" class="owl-carousel owl-theme">
@@ -30,25 +27,3 @@
         </div>
     </div>
 </div>
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/main.js"></script>
--->
-<section>
-  <div>
-    <% @tours.each do |tour| %>
-      <div>
-        <h1><%= link_to tour.title, tour %></h1>
-        <dl>
-          <dt>Título</dt>
-          <dd><%= tour.location.local%></dd>
-          <dt>Categoria</dt>
-          <dd><%= tour.category.name %></dd>
-        </dl>
-      </div>
-    <% end %>
-  </div>
-</section>

@@ -7,7 +7,7 @@
         <div class="row jobs">
             <div class="col-md-2">
                 <div class="wow">
-                  <h2>Tags list</h2>
+                  <h2>Categorias</h2>
                   <ul class="list-unstyled">
                     <li>
                       <a href="#">Amazon</a>
@@ -25,33 +25,26 @@
                 </div>
             </div>
             <div class="col-md-10">
-                <div class="more-jobs">
-                  <% @tours.each do |tour| %>
-                    <div>
-                      <h1><%= link_to tour.title, tour %></h1>
-                      <dl>
-                        <dt>Título</dt>
-                        <dd><%= tour.location.local%></dd>
-                        <dt>Categoria</dt>
-                        <dd><%= tour.category.name %></dd>
-                      </dl>
-                    </div>
-                    <hr>
-                  <% end %>
-                    <!--<a href="">View more jobs asdkef lores espgeis nvnalalshe ejksdoj</a>
-                    <hr>
-                    <a href="">View more jobs asdkef lores espgeis nvnalalshe ejksdoj</a>
-                    <hr>
-                    <a href="">View more jobs asdkef lores espgeis nvnalalshe ejksdoj</a>
-                    <hr>
-                    <a href="">View more jobs asdkef lores espgeis nvnalalshe ejksdoj</a>
-                    <hr>
-                    <a href="">View more jobs asdkef lores espgeis nvnalalshe ejksdoj</a>
-                    <hr>
-                    <a href="">View more jobs asdkef lores espgeis nvnalalshe ejksdoj</a>
-                    <hr>
-                    <a href="">View more jobs asdkef lores espgeis nvnalalshe ejksdoj</a> -->
-                </div>
+              <div class="container">
+                <% @tours.each do |tour| %>
+                  <div class="col-md-2">
+                    
+                  </div>
+                  <div class="col-md-10">
+                      <div>
+                        <h1><%= link_to tour.title, tour %></h1>
+                        <dl>
+                          <dt>Local</dt>
+                          <dd><%= tour.location.local%></dd>
+                          <dt>Categoria</dt>
+                          <dd><%= tour.category.name %></dd>
+                        </dl>
+                      </div>
+                      <hr>
+
+                  </div>
+                <% end %>
+              </div>
             </div>
         </div>
     </div>
