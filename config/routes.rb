@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-
+  resources :contacts, only: [:index]
   resources :locations, only: [:new, :create, :show]
   resources :guides, only: [:show]
   resources :categories, only: [:new, :create, :show]

@@ -14,14 +14,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="button navbar-right">
-          <button class="navbar-btn nav-button wow bounceInRight login" id="btn-login" data-wow-delay="0.8s"><%= link_to 'Entrar', new_guide_session_path %></button>
+          <button class="navbar-btn nav-button wow bounceInRight login" id="btn-login" data-wow-delay="0.8s">
+            <%= link_to 'Entrar', new_guide_session_path %>
+          </button>
       </div>
       <ul class="main-nav nav navbar-nav navbar-right">
-        <li class="wow fadeInDown" data-wow-delay="0s"><%= link_to 'Início', root_path, :class =>   "active" %></button></li>
+        <li class="wow fadeInDown" data-wow-delay="0s"><%= link_to 'Início', root_path %></button></li>
         <li class="wow fadeInDown" data-wow-delay="0.1s" id="top-exp"><%=link_to 'Experiências', tours_path%> </a></li>
         <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Guias</a></li>
         <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Sobre</a></li>
-        <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="#">Contato</a></li>
+        <li class="wow fadeInDown" data-wow-delay="0.5s" id="top-exp"><%= link_to 'Contato', contacts_path %> </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
