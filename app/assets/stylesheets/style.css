@@ -94,9 +94,9 @@ background-color: #589442;
 	background-color: #589442;
 	margin-right: 5px;
 }
-.nav-button:hover{
-	background-color: #589442;
-
+.nav-button.logout{
+	background-color: #8B0000;
+	margin-right: 5px;
 }
 .navbar{
 	margin-bottom: 0px;
