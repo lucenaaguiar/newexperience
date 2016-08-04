@@ -1,11 +1,13 @@
 <section>
-  <%= @tour.title %>
-  <%= @tour.location.local %>
-  <%= @tour.category.name %>
-  <%= @tour.guide.name %>
-  <%= @tour.guide.phone %>
-  <%= @tour.duration %>
-  <%= number_to_currency(@tour.amount) %>
-  <%= @tour.description %>
-  <%= image_tag @tour.picture.url(:thumb) %>
+  <div class="container">
+    <div><%= image_tag @tour.picture.url(:thumb) %></div>
+    <div><%= @tour.title %></div>
+    <div><%= @tour.location.local %></div>
+    <div><%= @tour.category.name %></div>
+    <div><%= @tour.guide.name %></div>
+    <div><%= @tour.guide.phone %></div>
+    <div><%= @tour.duration %></div>
+    <div><%= number_to_currency(@tour.amount) %></div>
+    <div><%= @tour.description %></div>
+  </div>
 </section>

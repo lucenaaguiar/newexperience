@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Experience the World</title>
+    <title>Company, Experimente o mundo</title>
     <meta name="description" content="company is a free job board template">
     <meta name="author" content="Ohidul">
     <meta name="keyword" content="html, css, bootstrap, job-board">
@@ -30,9 +30,6 @@
     <% end %>
     <% if flash[:error] %>
       <%= flash[:error] %>
-    <% end %>
-    <% if guide_signed_in? %>
-      Olá <%= current_guide.email %>
     <% end %>
     <%= render 'home/top' %>
     <%= render 'home/menu' %>

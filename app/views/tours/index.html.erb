@@ -1,26 +1,16 @@
 <div class="content-area">
     <div class="container">
         <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
-            <h5>Resultado da Busca</h5>
-            <h2><span>54716</span> Passeios disponíveis</h2>
+            <h2>Passeios disponíveis</h2>
         </div>
         <div class="row jobs">
             <div class="col-md-2">
                 <div class="wow">
                   <h2>Categorias</h2>
                   <ul class="list-unstyled">
-                    <li>
-                      <a href="#">Amazon</a>
-                    </li>
-                    <li>
-                      <a href="#">River</a>
-                    </li>
-                    <li>
-                      <a href="#">Day</a>
-                    </li>
-                    <li>
-                      <a href="#">Night</a>
-                    </li>
+                    <% @categories.each do |cat| %>
+                    <li><%= link_to cat.name, cat%></li>
+                    <% end %>
                   </ul>
                 </div>
             </div>

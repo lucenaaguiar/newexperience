@@ -14,8 +14,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="button navbar-right">
+        <% if guide_signed_in? %>
+          Olá, <%= current_guide.email %>
+        <% end %>
           <button class="navbar-btn nav-button wow bounceInRight login" id="btn-login" data-wow-delay="0.8s">
-            <%= link_to 'Entrar', new_guide_session_path %>
+            <% if guide_signed_in? %>
+              <%= link_to 'Sair', destroy_guide_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Entrar', new_guide_session_path %>
+            <% end %>
           </button>
       </div>
       <ul class="main-nav nav navbar-nav navbar-right">
