@@ -9,6 +9,8 @@ feature 'User view tours' do
     visit root_path
     click_on 'Experiências'
 
+    expect(page).to have_content "#{tours.count} Passeios disponíveis"
+
     tours.each do |tour|
       expect(page).to have_link tour.title
       expect(page).to have_content tour.location.local

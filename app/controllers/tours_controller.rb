@@ -27,7 +27,7 @@ class ToursController < ApplicationController
   end
 
   def search
-    @tours = Tour.joins(:location).where("city like '%#{params[:location]}'")
+    @tours = Tour.joins(:location).where("city like '%#{params[:location]}%'")
     category_id = params[:category_id].empty?
     @tours = @tours.where(category_id: params[:category_id]) unless category_id
   end
