@@ -16,7 +16,7 @@ feature 'Admin add guide' do
 
     click_on 'Cadastrar Guia'
 
-    expect(page).to have_content "Olá #{guide.email}"
+    expect(page).to have_content "Olá, #{guide.email}"
   end
   scenario 'With blank fill_in' do
     visit new_guide_registration_path

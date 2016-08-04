@@ -23,8 +23,6 @@ feature 'User search tour by location' do
     expect(page).to have_content tour.title
     expect(page).to have_content tour.location.local
     expect(page).to have_content tour.category.name
-    expect(page).to have_content tour.guide.name
-    expect(page).to have_content tour.description
     expect(page).to_not have_content tour1.title
   end
 

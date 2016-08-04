@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Experience the World</title>
+    <title>Company, Experimente o mundo</title>
     <meta name="description" content="company is a free job board template">
     <meta name="author" content="Ohidul">
     <meta name="keyword" content="html, css, bootstrap, job-board">
@@ -21,7 +21,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="overflow: visible;">
     <% if flash[:notice] %>
       <%= flash[:notice] %>
     <% end %>
@@ -31,11 +31,7 @@
     <% if flash[:error] %>
       <%= flash[:error] %>
     <% end %>
-    <% if guide_signed_in? %>
-      Olá <%= current_guide.email %>
-    <% end %>
     <%= render 'home/top' %>
     <%= render 'home/menu' %>
-    <%= yield %>
-  </body>
+    <%= yield %>  
 </html>

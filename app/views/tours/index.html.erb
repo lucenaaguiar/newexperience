@@ -1,42 +1,32 @@
 <div class="content-area">
     <div class="container">
         <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
-            <h5>Resultado da Busca</h5>
-            <h2><span>54716</span> Passeios disponíveis</h2>
+            <h2>Passeios disponíveis</h2>
         </div>
         <div class="row jobs">
-            <div class="col-md-2">
-                <div class="wow">
-                  <h2>Categorias</h2>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a href="#">Amazon</a>
-                    </li>
-                    <li>
-                      <a href="#">River</a>
-                    </li>
-                    <li>
-                      <a href="#">Day</a>
-                    </li>
-                    <li>
-                      <a href="#">Night</a>
-                    </li>
-                  </ul>
+            <div class="col-md-10 col-md-offset-2">
+              <% @tours.each do |tour| %>
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    <h4 class="panel-title"><%= link_to tour.title, tour %></h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-2">
+                      <%= link_to tour do %>
+                        <%= image_tag tour.picture.url(:thumb), class: "img-thumbnail" %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-10">
+                      <dl class="dl-horizontal">
+                        <dt>Local</dt>
+                        <dd><%= tour.location.local%></dd>
+                        <dt>Categoria</dt>
+                        <dd><%= tour.category.name %></dd>
+                      </dl>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-md-10">
-                <% @tours.each do |tour| %>
-                      <div>
-                        <h1><%= link_to tour.title, tour %></h1>
-                        <%= image_tag tour.picture.url(:thumb) %>
-                        <dl>
-                          <dt>Local</dt>
-                          <dd><%= tour.location.local%></dd>
-                          <dt>Categoria</dt>
-                          <dd><%= tour.category.name %></dd>
-                        </dl>
-                      </div>
-                <% end %>
+              <% end %>
             </div>
         </div>
     </div>

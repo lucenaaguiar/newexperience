@@ -3,6 +3,7 @@ class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
+    @categories = Category.all
   end
 
   def new

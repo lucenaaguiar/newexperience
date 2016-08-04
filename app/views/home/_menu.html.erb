@@ -17,19 +17,19 @@
       <% unless guide_signed_in? %>
         <div class="button navbar-right">
           <button class="navbar-btn nav-button wow bounceInRight login" id="btn-login" data-wow-delay="0.8s">
-            <%= link_to 'Entrar', new_guide_session_path %>
+            <%= link_to 'Entrar', new_guide_session_path, style: 'color: #fff;' %>
           </button>
         </div>
       <% else %>
         <div class="button navbar-right">
-          <button class="navbar-btn nav-button wow bounceInRight login" id="btn-login" data-wow-delay="0.8s">
-            <%= link_to "Logout", destroy_guide_session_path, method: :delete %>
+          <button class="navbar-btn nav-button wow bounceInRight logout" id="btn-login" data-wow-delay="0.8s">
+            <%= link_to "Logout", destroy_guide_session_path, method: :delete, style: 'color: #fff;' %>
           </button>
         </div>
       <% end %>
       <ul class="main-nav nav navbar-nav navbar-right">
         <li class="wow fadeInDown" data-wow-delay="0s"><%= link_to 'Início', root_path %></button></li>
-        <li class="wow fadeInDown" data-wow-delay="0.1s" id="top-exp"><%=link_to 'Experiências', tours_path%> </a></li>        
+        <li class="wow fadeInDown" data-wow-delay="0.1s" id="top-exp"><%=link_to 'Experiências', tours_path%> </a></li>
         <li class="wow fadeInDown" data-wow-delay="0.2s"> <%= link_to 'Guias', guides_path %>
         <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Sobre</a></li>
         <li class="wow fadeInDown" data-wow-delay="0.5s" id="top-exp"><%= link_to 'Contato', contacts_path %> </a></li>

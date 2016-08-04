@@ -4,21 +4,16 @@
             <div class="col-md-5 col-sm-8 col-xs-8">
                 <div class="header-half header-call">
                     <p>
-                        <span><i></i>Experience the world with help of local people.</span>
+                        <span><i></i>Experimente o mundo com a ajuda das pessoas locais.</span>
                     </p>
                 </div>
             </div>
-            <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-3  col-xs-offset-1">
-                <div class="header-half header-social">
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-vine"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-                </div>
+            <div class="col-md-3 col-md-offset-4  col-sm-3 col-sm-offset-1  col-xs-3  col-xs-offset-1 header-half header-call">
+              <% if guide_signed_in? %>
+                <p>
+                  <span>Olá, <%= current_guide.email %></span>
+                </p>
+              <% end %>
             </div>
         </div>
     </div>
