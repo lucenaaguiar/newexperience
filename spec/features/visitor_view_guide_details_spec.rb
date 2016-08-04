@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'User view tours' do
   scenario 'successfully' do
-
     guide = create :guide
 
     tours = create_list :tour, 5, guide: guide

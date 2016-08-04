@@ -9,6 +9,5 @@ class Guide < ApplicationRecord
   has_many :tour
 
   def tour_list
-    binding.pry
   end
 end
