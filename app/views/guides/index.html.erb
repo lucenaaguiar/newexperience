@@ -1,0 +1,6 @@
+<section>
+  <% @guides.each do |guide| %>
+    <%= link_to guide.name, guide %>
+    <%= guide.email %> <br>
+  <% end %>
+</section>
