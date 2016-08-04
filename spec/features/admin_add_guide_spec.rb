@@ -12,6 +12,7 @@ feature 'Admin add guide' do
     fill_in 'Email', with: guide.email
     fill_in 'Senha', with: guide.password
     fill_in 'Confirme senha', with: guide.password
+    attach_file('Enviar Imagem', Rails.root + 'spec/fixtures/cat2.jpg')
 
     click_on 'Cadastrar Guia'
 
