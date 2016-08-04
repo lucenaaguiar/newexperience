@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :guides
+  as :guide do
+    resources :guides, only:[:index]
+  end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
   resources :tours, only: [:new, :create, :show, :index] do

@@ -22,3 +22,5 @@
 
 # SimpleCov report
 /coverage
+
+/public/system
