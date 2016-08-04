@@ -17,6 +17,6 @@ feature 'Guide sign in' do
     end
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content "Olá #{guide.email}"
+    expect(page).to have_content "Olá, #{guide.email}"
   end
 end
