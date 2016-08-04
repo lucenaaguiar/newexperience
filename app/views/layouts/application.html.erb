@@ -31,11 +31,7 @@
     <% if flash[:error] %>
       <%= flash[:error] %>
     <% end %>
-    <% if guide_signed_in? %>
-      Olá <%= current_guide.email %>
-    <% end %>
     <%= render 'home/top' %>
     <%= render 'home/menu' %>
-    <%= yield %>
-  </body>
+    <%= yield %>  
 </html>

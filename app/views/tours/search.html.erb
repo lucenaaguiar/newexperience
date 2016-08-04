@@ -1,12 +1,34 @@
-<section>
-  <% @tours.each do |tour| %>
-    <%= tour.title %>
-    <%= tour.location.local %>
-    <%= tour.category.name %>
-    <%= tour.guide.name %>
-    <%= tour.guide.phone %>
-    <%= tour.duration %>
-    <%= number_to_currency(tour.amount) %>
-    <%= tour.description %>
-  <% end %>
-</section>
+<div class="content-area">
+    <div class="container">
+        <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
+            <h5>Resultado da Busca</h5>
+            <h2><span>54716</span> Passeios disponíveis</h2>
+        </div>
+        <div class="row jobs">
+            <div class="col-md-10 col-md-offset-2">
+              <% @tours.each do |tour| %>
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    <h4 class="panel-title"><%= link_to tour.title, tour %></h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-2">
+                      <%= link_to tour do %>
+                        <%= image_tag tour.picture.url(:thumb) %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-10">
+                      <dl class="dl-horizontal">
+                        <dt>Local</dt>
+                        <dd><%= tour.location.local%></dd>
+                        <dt>Categoria</dt>
+                        <dd><%= tour.category.name %></dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+        </div>
+    </div>
+</div>
