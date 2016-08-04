@@ -3,4 +3,11 @@
   <%= @guide.location %>
   <%= @guide.phone %>
   <%= @guide.email %>
+
+  <%= 'Não há passeios cadastrados!' if @guide.tour.empty?%>
+
+  <% @guide.tour.each do |tour| %>
+    <%= link_to tour.title, tour %>
+  <% end %>
+
 </section>

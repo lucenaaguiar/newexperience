@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :guides
   as :guide do
     resources :guides, only:[:index]
+    get '/guides/:id', to: 'guides#show', as: :view_guide
   end
 
 
