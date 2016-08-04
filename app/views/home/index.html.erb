@@ -1,24 +1,28 @@
-<%= link_to 'Entrar', new_guide_session_path %>
-<section>
-  <div>
-    <%= form_tag search_tours_path, method: 'get' do %>
-      <%= label_tag :categories, 'Tipo de passeio:' %>
-      <%= select_tag :categories, options_from_collection_for_select(@categories, :id, :name), prompt: 'Categoria'  %>
-      <%= submit_tag 'Buscar' %>
-    <% end %>
-  </div>
-
-  <div>
-    <% @tours.each do |tour| %>
-      <div>
-        <h1><%= link_to tour.title, tour %></h1>
-        <dl>
-          <dt>Título</dt>
-          <dd><%= tour.location.local%></dd>
-          <dt>Categoria</dt>
-          <dd><%= tour.category.name %></dd>
-        </dl>
-      </div>
-    <% end %>
-  </div>
-</section>
+<!-- Body content -->
+<div class="slider-area">
+    <div class="slider">
+        <div id="bg-slider" class="owl-carousel owl-theme">
+          <div class="item"><%= image_tag "slider-image-3.jpg", alt: "Green River" %></div>
+          <div class="item"><%= image_tag "slider-image-2.jpg", alt: "Green River2" %>></div>
+        </div>
+    </div>
+    <div class="container slider-content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+                <h2>Tour Searching Just Got So Easy</h2>
+                <p>Experience the world with help of local people. Have the chance to visit places that only local people know. Hear the historys from people who lived it.</p>
+                <div class="search-form wow pulse" data-wow-delay="0.8s">
+                    <%= form_tag search_tours_path, method: 'get', class: "form-inline" do %>
+                      <div class="form-group", id="lbl-search" >
+                        <%= label_tag :location, 'Local' %>
+                        <%= text_field_tag :location, nil, class: "form-control", placeholder: 'Salvador, Florianópolis...'%>
+                        <%= label_tag :category_id, 'Tipo de passeio' %>
+                        <%= select_tag :category_id, options_from_collection_for_select(@categories, :id, :name), class: "form-control", prompt: 'Qualquer tipo de passeio'  %>
+                        <%= submit_tag 'Buscar' %>
+                      </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,10 @@
 class ToursController < ApplicationController
   before_action :authenticate_guide!, only: [:new, :create]
 
+  def index
+    @tours = Tour.all
+  end
+
   def new
     @tour = Tour.new
     @categories = Category.all
@@ -22,7 +26,9 @@ class ToursController < ApplicationController
   end
 
   def search
-    @tours = Tour.where(category_id: params[:categories])
+    @tours = Tour.joins(:location).where("city like '%#{params[:location]}'")
+    category_id = params[:category_id].empty?
+    @tours = @tours.where(category_id: params[:category_id]) unless category_id
   end
 
   private
