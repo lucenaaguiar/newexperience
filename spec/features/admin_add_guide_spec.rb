@@ -24,6 +24,6 @@ feature 'Admin add guide' do
 
     click_on 'Cadastrar Guia'
 
-    expect(page).to have_content 'Sign up Please review the problems below:'
+    expect(page).to have_content 'Novo usuário'
   end
 end

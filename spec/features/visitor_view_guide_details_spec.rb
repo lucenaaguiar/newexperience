@@ -11,7 +11,7 @@ feature 'User view tours' do
     click_on guide.name
 
     expect(page).to have_content guide.name
-    expect(page).to have_content guide.location
+    expect(page).to have_content guide.location.local
     expect(page).to have_content guide.phone
     expect(page).to have_content guide.email
 
