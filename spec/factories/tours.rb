@@ -3,6 +3,7 @@ FactoryGirl.define do
     sequence(:title) { |n| "Passeio_#{n}" }
     location
     category
+    guide
     duration 120
     amount 50.0
     description 'Passeio de bike em Rondonia'

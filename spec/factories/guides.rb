@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :guide do
     name 'Jao'
-    location 'Sao Paulo'
+    location 'Sao Paulo, SP'
     phone '12 32342312'
     email 'dmara@gmail.com'
     password '12345567'
