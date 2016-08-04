@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804201443) do
+ActiveRecord::Schema.define(version: 20160804220227) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160804201443) do
 
   create_table "guides", force: :cascade do |t|
     t.string   "name"
-    t.string   "location"
     t.string   "phone"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
@@ -38,7 +37,9 @@ ActiveRecord::Schema.define(version: 20160804201443) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "location_id"
     t.index ["email"], name: "index_guides_on_email", unique: true
+    t.index ["location_id"], name: "index_guides_on_location_id"
     t.index ["reset_password_token"], name: "index_guides_on_reset_password_token", unique: true
   end
 

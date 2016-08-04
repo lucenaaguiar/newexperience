@@ -7,7 +7,7 @@ class Guide < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: %r{\Aimage\/.*\Z}
 
   has_many :tour
-
+  belongs_to :location
   def tour_list
   end
 end
