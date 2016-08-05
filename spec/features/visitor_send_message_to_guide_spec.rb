@@ -13,7 +13,7 @@ feature 'Visitor send message to guide' do
     fill_in 'Telefone', with: message.phone
     fill_in 'Email', with: message.email
 
-    fill_in 'Deixe uma mensagem para o guia', with: message.text_msg
+    fill_in 'Deixe uma mensagem', with: message.text_msg
 
     click_on 'Enviar'
 
