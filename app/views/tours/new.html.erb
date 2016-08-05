@@ -1,13 +1,15 @@
-<section>
-  <h1> Novo Passeio </h1>
-  <%= simple_form_for @tour do |f| %>
-    <%= f.input :title, label: 'Título' %>
-    <%= f.input :location_id, label: 'Local',     collection: @locations,  label_method: :local %>
-    <%= f.input :category_id, label: 'Categoria', collection: @categories, label_method: :name %>
-    <%= f.input :duration, label: 'Duração' %>
-    <%= f.input :amount, label: 'Preço' %>
-    <%= f.input :description, label: 'Descrição' %>
-    <%= f.input :picture, as: :file, label: 'Enviar Imagem' %>
-    <%= f.submit 'Criar Passeio' %>
-  <% end %>
-</section>
+<div class="col-lg-4 col-lg-offset-4">
+  <section>
+    <h1> Novo Passeio </h1>
+    <%= simple_form_for @tour do |f| %>
+      <%= f.input :title, label: 'Título' %>
+      <%= f.input :location_id, label: 'Local',     collection: @locations,  label_method: :local %>
+      <%= f.input :category_id, label: 'Categoria', collection: @categories, label_method: :name %>
+      <%= f.input :duration, label: 'Duração' %>
+      <%= f.input :amount, label: 'Preço' %>
+      <%= f.input :description, label: 'Descrição' %>
+      <%= f.input :picture, as: :file, label: 'Enviar Imagem' %>
+      <%= f.submit 'Criar Passeio' %>
+    <% end %>
+  </section>
+</div>
