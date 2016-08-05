@@ -24,6 +24,7 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+    @message = Message.new
   end
 
   def search
