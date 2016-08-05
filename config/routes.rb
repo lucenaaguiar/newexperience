@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :messages, only: [:create]
   end
+  resources :messages, only: [:show]
   resources :contacts, only: [:index]
   resources :locations, only: [:new, :create, :show]
   resources :guides, only: [:show]

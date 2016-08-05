@@ -33,7 +33,28 @@
         <p>
           <%= @tour.description %>
         </p>
+        <%= simple_form_for [@tour, @message] do |f| %>
+          <div class="form-group">
+            <%= f.input :name, label: 'Nome' %>
+          </div>
+          <div class="form-group">
+            <%= f.input :phone, label: 'Telefone' %>
+          </div>
+          <div class="form-group">
+            <%= f.input :email, label: 'Email' %>
+          </div>
+          <div class="form-group">
+            <%= f.input :date_tour, label: 'Data do passeio' %>
+          </div>
+          <div class="form-group">
+            <%= f.input :text_msg, label: 'Deixe uma mensagem para o guia' %>
+          </div>
+          <%= f.submit 'Enviar' %>
+        <% end %>
       </div>
+
+
+
     </div>
   </div>
 </section>
