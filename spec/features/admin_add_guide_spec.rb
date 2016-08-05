@@ -2,12 +2,13 @@ require 'rails_helper'
 
 feature 'Admin add guide' do
   scenario 'successfully' do
+    location = create :location
     guide = build :guide
 
     visit new_guide_registration_path
 
     fill_in 'Nome', with: guide.name
-    fill_in 'Localidade', with: guide.location
+    select location.local, from: 'Localidade'
     fill_in 'Telefone', with: guide.phone
     fill_in 'Email', with: guide.email
     fill_in 'Senha', with: guide.password
@@ -23,6 +24,6 @@ feature 'Admin add guide' do
 
     click_on 'Cadastrar Guia'
 
-    expect(page).to have_content 'Sign up Please review the problems below:'
+    expect(page).to have_content 'Novo usuário'
   end
 end

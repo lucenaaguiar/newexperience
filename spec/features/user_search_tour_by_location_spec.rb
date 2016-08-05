@@ -20,6 +20,8 @@ feature 'User search tour by location' do
 
     click_on 'Buscar'
 
+    expect(page).to have_content '1 Passeios encontrados'
+
     expect(page).to have_content tour.title
     expect(page).to have_content tour.location.local
     expect(page).to have_content tour.category.name
@@ -43,6 +45,8 @@ feature 'User search tour by location' do
 
     click_on 'Buscar'
 
+    expect(page).to have_content '2 Passeios encontrados'
+
     expect(page).not_to have_content category.first.name
     expect(page).to have_content locations.last.city
     expect(page).to have_content locations.first.city
@@ -64,6 +68,8 @@ feature 'User search tour by location' do
     fill_in 'Local', with: locations.first.city
 
     click_on 'Buscar'
+
+    expect(page).to have_content '2 Passeios encontrados'
 
     expect(page).not_to have_content locations.last.local
     expect(page).to have_content category.first.name

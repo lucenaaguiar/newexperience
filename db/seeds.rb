@@ -5657,11 +5657,11 @@ Category.create!(name: "Turismo Histórico")
 puts "Categories: Success!"
 
 puts "Guides: initializing..."
-Guide.create!(name: "Ariadyne",       location: "São Paulo, SP",      phone: "(11) 1111-1111", email: "ariadyne-sp@aventura.com", password: '12345567')
-Guide.create!(name: "João ALmeida",   location: "Rio de Janeiro, RJ", phone: "(21) 2121-2121", email: "joao-rj@aventura.com",     password: '12345567')
-Guide.create!(name: "Patrick",        location: "Belo Horizonte, MG", phone: "(31) 3131-3131", email: "patrick-mg@aventura.com",  password: '12345567')
-Guide.create!(name: "Silvio Santos",  location: "Salvador, BA",       phone: "(71) 7171-7171", email: "silvio-ba@aventura.com",   password: '12345567')
-Guide.create!(name: "Diego Maranhão", location: "Porto Velho, RO",    phone: "(69) 6969-6969", email: "diego-ro@aventura.com",    password: '12345567')
+Guide.create!(name: "Ariadyne",       location: Location.first,      phone: "(11) 1111-1111", email: "ariadyne-sp@aventura.com", password: '12345567')
+Guide.create!(name: "João ALmeida",   location: Location.last, phone: "(21) 2121-2121", email: "joao-rj@aventura.com",     password: '12345567')
+Guide.create!(name: "Patrick",        location: Location.first, phone: "(31) 3131-3131", email: "patrick-mg@aventura.com",  password: '12345567')
+Guide.create!(name: "Silvio Santos",  location: Location.last,       phone: "(71) 7171-7171", email: "silvio-ba@aventura.com",   password: '12345567')
+Guide.create!(name: "Diego Maranhão", location: Location.first,    phone: "(69) 6969-6969", email: "diego-ro@aventura.com",    password: '12345567')
 puts "Guides: Success!"
 
 puts "Tours: initializing..."
@@ -5669,54 +5669,54 @@ puts "Tours: City Tour - Cidade de São Paulo"
 g1 = Guide.find_by(name: "Ariadyne")
 l1 = Location.find_by(city: "São Paulo")
 c1 = Category.find_by(name: "Turismo Cultural")
-c1.tours.create!(title: "City Tour - Cidade de São Paulo", 
-                 location: l1, 
+c1.tours.create!(title: "City Tour - Cidade de São Paulo",
+                 location: l1,
                  guide: g1,
-                 duration: 120,  
-                 amount: 240, 
+                 duration: 120,
+                 amount: 240,
                  description: "Roteiro: Tour pelo centro: Praça da Republica, Av. Ipiranga, Ed.Copan, Ed.Itália, Viaduto do Chá, Teatro Municipal, Faculdade de Direito, Vale do Anhangabau, Praça da Sé marco zero de São Paulo")
 
 puts "Tours: City Tour Ecológico com trilha e cachoeira"
 g2 = Guide.find_by(name: "João ALmeida")
 l2 = Location.find_by(city: "Rio de Janeiro")
 c2 = Category.find_by(name: "Natureza e Aventura")
-c2.tours.create!(title: "City Tour Ecológico com trilha e cachoeira", 
-                 location: l2, 
+c2.tours.create!(title: "City Tour Ecológico com trilha e cachoeira",
+                 location: l2,
                  guide: g2,
-                 duration: 240, 
-                 amount: 480, 
+                 duration: 240,
+                 amount: 480,
                  description: "O passeio inicia em direção à base da Pedra Bonita, onde está localizada a rampa de Voo Livre. Com localização privilegiada, a rampa de decolagem de Asa Delta e Parapente permite um belo visual da cidade, incluindo o Morro Dois Irmãos, Praia de São Conrado e Favela da Rocinha. Seguimos para a trilha da Pedra Bonita, uma caminhada considerada leve e que leva em média 40 minutos até o topo. Do cume da Pedra Bonita é possível avistar a Pedra da Gávea, as praias da Barra da Tijuca e São Conrado, além da imensidão da Floresta da Tijuca ao redor. É um mirante natural belíssimo e uma das melhores vistas para fotografar a cidade do Rio de Janeiro.")
 
 puts "Tours: City Tour em Belo Horizonte"
 g3 = Guide.find_by(name: "Patrick")
 l3 = Location.find_by(city: "Belo Horizonte")
 c3 = Category.find_by(name: "Turismo Histórico")
-c3.tours.create!(title: "City Tour em Belo Horizonte", 
-                 location: l3, 
+c3.tours.create!(title: "City Tour em Belo Horizonte",
+                 location: l3,
                  guide: g3,
-                 duration: 360, 
-                 amount: 720, 
+                 duration: 360,
+                 amount: 720,
                  description: "Visita-se: Região da Pampulha, com destaque para as obras de Oscar Niemeyer, Igreja São Francisco de Assis, Casa do Baile e Iate Tênis Clube. Museu Abílio Barreto (que é a casa mais antiga de BH que fica situada no bairro de Lourdes), logo após seguimos para o Bairro Mangabeiras, considerado região nobre com destaque a Rua do Amendoim, Praça do Papa, Residência Oficial do Governador em Exercício e o Mirante, onde avistamos toda a grande BH. E ainda visitamos a Praça da Liberdade, onde estão situadas as antigas instalações das secretarias do Estado e do Palácio do Governo, que pertencem ao estilo neoclássico.")
 
 puts "Tours: City Tour Histórico Salvador"
 g4 = Guide.find_by(name: "Silvio Santos")
 l4 = Location.find_by(city: "Salvador")
 c4 = Category.find_by(name: "Família")
-c4.tours.create!(title: "City Tour Histórico Salvador", 
-                 location: l4, 
+c4.tours.create!(title: "City Tour Histórico Salvador",
+                 location: l4,
                  guide: g4,
                  duration: 360,
-                 amount: 720, 
+                 amount: 720,
                  description: "Buscamos os passageiros nos hotéis da orla de Salvador. Visitando o Farol da Barra, cartão postal da cidade de Salvador. Praia do Porto da Barra, Ladeira da Barra com vista panorâmica sobre o mar e a Ilha de Itaparica (onde estão localizados o Iate Club, a Igreja de Santo Antônio da Barra e o Cemitério dos Ingleses), Largo da Vitória, (onde encontra-se uma das mais antigas igrejas da Bahia). Corredor da Vitória, o bairro mais nobre de Salvador, onde habitava a aristocracia bahiana, que abriga além de mansões residenciais, também prédios históricos. A Praça do Campo Grande (palco de muitas lutas pela independência da Bahia e manifestações populares como o carnaval), o Teatro Castro Alves (externo), o maior teatro do nordeste. Avenida Sete de Setembro e seu comércio local e popular, cidade alta, Praça Castro Alves, Pelourinho (hoje é Patrimônio Histórico da Humanidade). Com uma bela caminhada cultural pela Praça Municipal localizada em pleno centro histórico, onde está situado o Palácio Rio Branco (abrigava o Governo do Estado) e a Câmara Municipal, em frente ao Elevador Lacerda, de onde se tem uma das mais belas vistas da Baía de Todos os Santos. Praça Terreiro de Jesus, onde está localizada a Catedral Basílica de Salvador e a Igreja de São Francisco, uma das mais ricas do Brasil e considerada o mais belo exemplar barroco português do mundo. As ruas e as praças do Pelourinho, as casas coloridas, com seus encantos, lendas e mistérios. A Praça do Pelourinho onde Michael Jackson cantou e fez o seu clip, mistura de raças, cores, cultura e muita história. No retorno levamos os passageiros ao hotel.")
 
 puts "Tours: City Tour Histórico Porto Velho"
 g5 = Guide.find_by(name: "Diego Maranhão")
 l5 = Location.find_by(city: "Porto Velho")
 c5 = Category.find_by(name: "Turismo Histórico")
-c5.tours.create!(title: "City Tour Histórico Porto Velho", 
-                 location: l5, 
+c5.tours.create!(title: "City Tour Histórico Porto Velho",
+                 location: l5,
                  guide: g5,
                  duration: 480,
-                 amount: 960, 
+                 amount: 960,
                  description: "Estrada de Ferro Madeira-Mamoré, Três Caixas D’água, Museu Ferroviário, Parque Urbano de Porto Velho")
 puts "Tours: Success!"
