@@ -5,6 +5,6 @@ class GuidesController < Devise::RegistrationsController
 
   def index
     @guides = Guide.all
-    flash[:notice] = 'Nenhum Guia cadastrado.' if @guides.empty?
+    flash.now[:notice] = 'Nenhum Guia cadastrado.' if @guides.empty?
   end
 end
