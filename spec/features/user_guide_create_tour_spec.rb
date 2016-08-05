@@ -8,7 +8,8 @@ feature 'User create tour' do
     category = create(:category)
     location = create(:location)
 
-    visit new_tour_path
+    visit root_path
+    click_on 'Novo Passeio'
 
     fill_in 'Título',       with: 'Passeio a Serra da Mantiqueira'
     select location.local,  from: 'Local'

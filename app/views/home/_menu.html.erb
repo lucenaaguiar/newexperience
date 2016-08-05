@@ -31,7 +31,9 @@
         <li class="wow fadeInDown" data-wow-delay="0s"><%= link_to 'Início', root_path %></button></li>
         <li class="wow fadeInDown" data-wow-delay="0.1s" id="top-exp"><%=link_to 'Experiências', tours_path%> </a></li>
         <li class="wow fadeInDown" data-wow-delay="0.2s"> <%= link_to 'Guias', guides_path %>
-        <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Sobre</a></li>
+        <% if guide_signed_in? %>
+          <li class="wow fadeInDown" data-wow-delay="0.3s"><%= link_to 'Novo Passeio', new_tour_path %></li>
+        <% end %>
         <li class="wow fadeInDown" data-wow-delay="0.5s" id="top-exp"><%= link_to 'Contato', contacts_path %> </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
