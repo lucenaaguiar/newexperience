@@ -1,0 +1,26 @@
+<aside>
+  <div class="well well-sm">
+    <%= link_to guide do %>
+      <p style="text-align: center">
+        <%= image_tag guide.avatar.url(:thumb), class: "img-thumbnail" %>
+      </p>
+      <p style="text-align: center" id="guide_name">
+        <%= link_to guide.name %>
+      </p>
+    <% end %>
+    <div style="padding-left:2px">
+      <div>
+        <span><strong>Local: </strong></span>
+        <span><%= guide.location.local %></span>
+      </div>
+      <div>
+        <span><strong>Telefone: </strong></span>
+        <span><%= guide.phone %></span>
+      </div>
+      <div>
+        <span><strong>Email: </strong></span>
+        <span><%= guide.email %></span>
+      </div>
+    </div>
+  </div>
+</aside>

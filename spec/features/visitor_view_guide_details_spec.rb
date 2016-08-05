@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User view tours' do
+feature 'User view guides' do
   scenario 'successfully' do
     guide = create :guide
 
@@ -8,7 +8,9 @@ feature 'User view tours' do
 
     visit guides_path
 
-    click_on guide.name
+    within '#guide_name' do
+      click_on guide.name
+    end
 
     expect(page).to have_content guide.name
     expect(page).to have_content guide.location.local

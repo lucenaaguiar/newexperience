@@ -1,6 +1,9 @@
-<section>
-  <div class="content-area" style="margin-top:20px">
-    <div class="col-md-10 col-md-offset-2">
+<section style="margin-top:20px">
+  <div class="col-md-3">
+    <%= render partial: 'guides/details', locals: {guide: @tour.guide} %>
+  </div>
+  <div class="content-area">
+    <div class="col-md-9">
       <div class="col-md-6">
         <h2><%= @tour.title %></h3>
         <dl class="dl-horizontal">

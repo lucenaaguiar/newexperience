@@ -1,8 +1,30 @@
 <section>
-  <div class="container">
-    <% @guides.each do |guide| %>
-      <%= link_to guide.name, guide %>
-      <%= guide.email %> <br>
-    <% end %>
+  <div class="row" style="margin-top:20px">
+    <div class="col-md-10 col-md-offset-2">
+      <% @guides.each do |guide| %>
+        <div class="col-md-5">
+          <div class="panel panel-default well">
+            <%= link_to guide do %>
+              <p style="text-align: center">
+                <%= image_tag guide.avatar.url(:thumb), class: "img-thumbnail" %>
+              </p>
+            <% end %>
+            <p style="text-align: center" id="guide_name">
+              <%= link_to guide.name, guide %>
+            </p>
+            <div style="padding-left:10px">
+              <div>
+                <span><strong>Local: </strong></span>
+                <span><%= guide.location.local %></span>
+              </div>
+              <div>
+                <span><strong>Email: </strong></span>
+                <span><%= guide.email %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
  </div>
 </section>
