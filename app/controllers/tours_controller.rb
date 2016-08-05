@@ -17,7 +17,7 @@ class ToursController < ApplicationController
     if @tour.save
       redirect_to @tour
     else
-      flash.now[:error] = 'Não foi possível cadastra o passeio'
+      flash.now[:notice] = 'Não foi possível criar o passeio'
       render 'new'
     end
   end

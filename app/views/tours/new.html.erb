@@ -1,13 +1,22 @@
 <section>
-  <h1> Novo Passeio </h1>
-  <%= simple_form_for @tour do |f| %>
-    <%= f.input :title, label: 'Título' %>
-    <%= f.input :location_id, label: 'Local',     collection: @locations,  label_method: :local %>
-    <%= f.input :category_id, label: 'Categoria', collection: @categories, label_method: :name %>
-    <%= f.input :duration, label: 'Duração' %>
-    <%= f.input :amount, label: 'Preço' %>
-    <%= f.input :description, label: 'Descrição' %>
-    <%= f.input :picture, as: :file, label: 'Enviar Imagem' %>
-    <%= f.submit 'Criar Passeio' %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-5 col-md-offset-3">
+      <h1> Novo Passeio </h1>
+      <%= simple_form_for @tour do |f| %>
+        <%= f.input :title, label: 'Título' %>
+        <%= f.input :location_id, label: 'Local',     collection: @locations,  label_method: :local %>
+        <%= f.input :category_id, label: 'Categoria', collection: @categories, label_method: :name %>
+        <%= f.input :duration, label: 'Duração' %>
+        <%= f.input :amount, label: 'Preço' %>
+        <%= f.input :description, label: 'Descrição' %>
+        <%= f.input :picture, as: :file, label: 'Enviar Imagem' %>
+        <%= f.submit 'Criar Passeio' %>
+      <% end %>
+      <% if notice  %>
+        <div class="alert alert-danger" role="alert">
+          <span><%= notice %></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </section>

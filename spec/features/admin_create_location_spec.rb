@@ -11,7 +11,6 @@ feature 'Admin create location' do
 
     click_on 'Cadastrar Localidade'
 
-    expect(page).to have_content 'Localidade cadastrada com sucesso.'
     expect(page).to have_content location.city
     expect(page).to have_content location.state
   end

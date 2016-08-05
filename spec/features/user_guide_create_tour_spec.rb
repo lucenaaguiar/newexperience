@@ -33,4 +33,24 @@ feature 'User create tour' do
 
     expect(page).to have_xpath('//img')
   end
+
+  scenario 'with invalid data' do
+    guide = create :guide
+    category = create(:category)
+    location = create(:location)
+
+    login_as guide
+    visit new_tour_path
+
+    fill_in 'Título',       with: ''
+    select location.local,  from: 'Local'
+    select category.name,   from: 'Categoria'
+    fill_in 'Duração',      with: ''
+    fill_in 'Preço',        with: ''
+    fill_in 'Descrição',    with: ''
+
+    click_on 'Criar Passeio'
+
+    expect(page).to have_content 'Não foi possível criar o passeio'
+  end
 end

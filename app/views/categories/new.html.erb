@@ -1,7 +1,14 @@
 <section>
-  <%= simple_form_for @category do |f| %>
-    <%= f.input :name, label: 'Nome da categoria' %>
-    <%= link_to 'Voltar', root_path %>
-    <%= f.submit 'Salvar categoria' %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for @category do |f| %>
+        <%= f.input :name, label: 'Nome da categoria' %>
+        <%= link_to 'Voltar', root_path %>
+        <%= f.submit 'Salvar categoria' %>
+      <% end %>
+      <div>
+        <span><%= notice %></span>
+      </div>
+    </div>
+  </div>
 </section>

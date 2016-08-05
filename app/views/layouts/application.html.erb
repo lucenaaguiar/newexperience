@@ -22,16 +22,7 @@
   </head>
 
   <body style="overflow: visible;">
-    <% if flash[:notice] %>
-      <%= flash[:notice] %>
-    <% end %>
-    <% if flash[:alert] %>
-      <%= flash[:alert] %>
-    <% end %>
-    <% if flash[:error] %>
-      <%= flash[:error] %>
-    <% end %>
     <%= render 'home/top' %>
     <%= render 'home/menu' %>
-    <%= yield %>  
+    <%= yield %>
 </html>

@@ -1,7 +1,14 @@
 <section>
-  <%= simple_form_for @location do |f| %>
-    <%= f.input :state, label: 'Estado' %>
-    <%= f.input :city, label: 'Cidade' %>
-    <%= f.submit 'Cadastrar Localidade' %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for @location do |f| %>
+        <%= f.input :state, label: 'Estado' %>
+        <%= f.input :city, label: 'Cidade' %>
+        <%= f.submit 'Cadastrar Localidade' %>
+      <% end %>
+      <div>
+        <span><%= notice %></span>
+      </div>
+    </div>
+  </div>
 </section>
