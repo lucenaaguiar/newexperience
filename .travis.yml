@@ -11,9 +11,5 @@ notifications:
   email:
     recipients:
       - lucenaaguiar@gmail.com
-      - dmaranhao@gmail.com
-      - m2c.andre@gmail.com
-      - odairbr07@gmail.com
-      - lguilherme.santos@live.com
     on_success: always
     on_failure: always
